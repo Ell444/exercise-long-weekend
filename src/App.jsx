@@ -1,35 +1,47 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import CustomList from './components/CustomList'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const allLists =
+    [
+      {
+        title: "Invitati",
+        type: "ul",
+        list: ["Tizio", "Caio"]
+      },
+      {
+        title: "Organizzatori",
+        type: "ol",
+        list: ["Laura", "Massimo"]
+      }
+    ]
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h2>Lista ordinata</h2>
+      <CustomList
+        type='ol'
+        list={['Tizio', 'Caio', 'Sempronio']}
+      />
+
+      <h2>Lista non ordinata</h2>
+      <CustomList
+        type='ul'
+        list={['Sempronio', 'Tizio', 'Caio']}
+      />
+
+      {allLists.map((item, i) =>
+        <section key={i}>
+          <div>{item.title}</div>
+          <CustomList type={item.type} list={item.list} />
+        </section>
+      )}
+
     </>
-  )
+
+  );
 }
 
 export default App
