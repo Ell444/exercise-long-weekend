@@ -35,16 +35,16 @@ input:hover {
     border-color: slateblue;
 } 
 
-.wrapper {
+/* .wrapper {
     margin: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     color: cadetblue;
-}
+} */
 
-.wrapper > h1 {
+/* .wrapper > h1 {
     font-size: 3rem;
 }
 
@@ -62,4 +62,8 @@ input:hover {
 
 .negative {
     color: firebrick;
+} */
+
+.btn-ex-4 {
+    width: 80px;
 }

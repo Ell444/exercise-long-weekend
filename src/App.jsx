@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import CustomList from './components/CustomList'
-
+/* import Home from './components/Home';
+ */
 
 let allLists =
   [
@@ -29,7 +30,7 @@ let allLists =
 function App() {
 
   const [objectArray, setObjectArray] = useState(allLists);
-  const [count, setCount] = useState(0);
+  /* const [count, setCount] = useState(0); */
 
   return (
     <>
@@ -43,7 +44,10 @@ function App() {
             <h3>
               {elem.title}
             </h3>
-            <CustomList type={elem.type} list={elem.list} />
+            <CustomList
+              type={elem.type}
+              list={elem.list}
+              buttons={["Click here", "Click here as well"]} />
             <input
               type="text"
               value={elem.userValue}
@@ -73,8 +77,9 @@ function App() {
 
 
 
-      <div className='wrapper'>
-        <h1>
+      {/*    <div className='wrapper'>
+        <p>Esericizi non ufficiali</p>
+        <h1 className={count > 0 ? "positive" : "negative"}>
           {count}
         </h1>
         <div id='button-container'>
@@ -82,7 +87,8 @@ function App() {
           <button onClick={() => setCount(count + 1)}>+</button>
         </div>
 
-      </div>
+      </div> */}
+
 
     </>
   );
