@@ -1,14 +1,20 @@
 
 const CustomList = ({ type, list }) => {
 
+    const lista = list.map((elem, i) => {
 
-    const lista = list.map((el, ix) =>
+        return (
 
-        <li key={ix}>{el}</li>
+            <li key={i}>{elem}</li>)
 
-    )
+    })
 
     return type === 'ul' ? <ul>{lista}</ul> : <ol>{lista}</ol>
+
 }
+
+
+
+
 
 export default CustomList;
